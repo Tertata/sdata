@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+struct KTP {
+	int nik;
+    string nama;
+    string ttl;
+    string kelamin;
+    char goldar;
+    string alamat;
+    string RT;
+    string kel;
+    string kec;
+    string agama;
+    string status;
+    string pekerjaan;
+    string wni;
+    string berlaku;
+};
+
+int main () {
+	
+	KTP ktp1 = {59082008,"Muhammad Abdurohim", "Bogor, 30-10-2002" , "Laki-laki", 'B', "Kedung Badak NO.16", "008/002", "Kedung Badak", " Tanah Sareal", "Islam", "Belum Kawin", "Pelajar/Mahasiswa", "WNI", "Seumur hidup"}; 
+	cout << "		Provinsi Jawa Barat		" <<endl;
+	cout << "NIK				: " << ktp1.nik << endl;
+	cout << "Nama				: " << ktp1.nama << endl;
+	cout << "Tempat/Tgl Lahir	: " << ktp1.ttl <<endl;
+	cout << "Jenis Kelamin 		: " << ktp1.kelamin << "		Gol. Darah : "<< ktp1.goldar<< endl;
+	cout << "Alamat				: " << ktp1.alamat << endl;
+	cout << "	RT/RW			: " << ktp1.RT << endl;
+	cout << "	Kel/Desa		: " << ktp1.kel <<endl;
+	cout << "	Kecamatan		: " << ktp1.kec << endl;
+	cout << "Agama				: " << ktp1.agama << endl;
+	cout << "Status Perkawinan  : " << ktp1.status << endl;
+	cout << "Pekerjaan 			: " << ktp1.pekerjaan << endl;
+	cout << "Kewarganegaraan 	: " << ktp1.wni << endl;
+	cout << "Berlaku Hingga		: " << ktp1.berlaku << endl;
+	
+	return 0;
+}
+
