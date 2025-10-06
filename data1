@@ -1,0 +1,90 @@
+#include <iostream>
+using namespace std;
+
+struct Mahasiswa {
+    string nama;
+    string nim;
+    char kelas;
+    float nilaiAkhir;
+};
+
+class Bilangan {
+public:
+    int a;
+    float b;
+
+    void setData(int x, float y) {
+        a = x;
+        b = y;
+    }
+
+    void tampilData() {
+        cout << "Bagian integer : " << a << endl;
+        cout << "Bagian float   : " << b << endl;
+    }
+
+    void tambah(Bilangan x, Bilangan y) {
+        a = x.a + y.a;
+        b = x.b + y.b;
+    }
+
+    void banding(Bilangan x, Bilangan y) {
+        if (x.a > y.a)
+            cout << x.a << " lebih besar dari " << y.a << endl;
+        else if (x.a < y.a)
+            cout << x.a << " lebih kecil dari " << y.a << endl;
+        else
+            cout << x.a << " sama dengan " << y.a << endl;
+    }
+
+    int jumlahRekursi(int x, int y) {
+        if (x > y)
+            return 0;
+        cout << x;
+        if (x < y) cout << " + ";
+        return x + jumlahRekursi(x + 1, y);
+    }
+
+    void tampilRekursi(int x, int y) {
+        cout << "\nProses penjumlahan rekursif dari " << x
+             << " sampai " << y << ":\n";
+        int hasil = jumlahRekursi(x, y);
+        cout << " = " << hasil << endl;
+    }
+};
+
+int main() {
+    Mahasiswa mhs1 = {"Andi", "230001", 'A', 88.5};
+    Mahasiswa mhs2 = {"Budi", "230002", 'B', 91.0};
+
+    cout << "=== DATA MAHASISWA ===" << endl;
+    cout << "Nama  : " << mhs1.nama << endl;
+    cout << "NIM   : " << mhs1.nim << endl;
+    cout << "Kelas : " << mhs1.kelas << endl;
+    cout << "Nilai : " << mhs1.nilaiAkhir << endl << endl;
+
+    cout << "Nama  : " << mhs2.nama << endl;
+    cout << "NIM   : " << mhs2.nim << endl;
+    cout << "Kelas : " << mhs2.kelas << endl;
+    cout << "Nilai : " << mhs2.nilaiAkhir << endl;
+
+    Bilangan x, y, hasil;
+    x.setData(5, 2.5);
+    y.setData(3, 1.5);
+
+    cout << "\n=== DATA BILANGAN ===" << endl;
+    cout << "Bilangan X:" << endl; x.tampilData();
+    cout << "Bilangan Y:" << endl; y.tampilData();
+
+    hasil.tambah(x, y);
+    cout << "\nHasil penjumlahan X + Y:" << endl;
+    hasil.tampilData();
+
+    cout << "\nPerbandingan nilai integer X dan Y:" << endl;
+    hasil.banding(x, y);
+
+    cout << "\n=== FUNGSI REKURSI ===" << endl;
+    hasil.tampilRekursi(3, 7);
+
+    return 0;
+}
